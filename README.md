@@ -1,2 +1,2 @@
 # her-journey
-basketba
+basketball
