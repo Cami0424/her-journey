@@ -1,367 +1,1131 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Her Journey 🏀💗</title>
+<title>Her Journey 🏀💗</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #050505;
-      color: white;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --pink: #ff1493;
+    --hotpink: #ff0080;
+    --lightpink: #ff8fc7;
+    --black: #050505;
+    --card: #111111;
+    --gray: #bdbdbd;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--pink);
+    position: relative;
+}
+
+.logo {
+    width: 300px;
+    max-width: 90%;
+    border-radius: 20px;
+    display: block;
+    margin: auto;
+    box-shadow: 0 0 35px rgba(255, 20, 147, 0.35);
+}
+
+/* NAVIGATION */
+
+nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover {
+    background: var(--pink);
+    color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.70),
+            rgba(0,0,0,.94)
+        ),
+        url("741CF963-6F59-427E-8B5C-F0BE489B11CE(1).jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-badge {
+    width: 145px;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 25px;
+
+    border: 3px solid var(--pink);
+
+    box-shadow:
+        0 0 20px var(--pink),
+        0 0 60px rgba(255,20,147,.35);
+}
+
+.hero h1 {
+    font-size: clamp(45px, 9vw, 85px);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ff8fc7,
+        #ff1493
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+    color: var(--pink);
+    margin-top: 10px;
+    font-size: clamp(18px, 4vw, 28px);
+}
+
+.hero p {
+    max-width: 700px;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #eeeeee;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.pink-button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    background: var(--pink);
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow:
+        0 0 15px rgba(255,20,147,.7);
+
+    transition: .3s;
+}
+
+.pink-button:hover {
+    background: white;
+    color: var(--pink);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.5);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(32px, 6vw, 48px);
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    color: var(--pink);
+}
+
+.section-subtitle {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    color: var(--gray);
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* =========================
+   MISSION
+========================= */
+
+.mission-box {
+    margin-top: 40px;
+
+    padding: 45px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17000e,
+            #090909
+        );
+
+    border: 1px solid var(--pink);
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 35px rgba(255,20,147,.12);
+}
+
+.mission-box h3 {
+    color: var(--pink);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.mission-box p {
+    color: #eeeeee;
+    line-height: 1.9;
+    font-size: 18px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    margin-top: 45px;
+
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 450px;
+
+    display: block;
+
+    margin: auto;
+
+    border-radius: 25px;
+
+    border: 2px solid var(--pink);
+
+    box-shadow:
+        0 0 30px rgba(255,20,147,.2);
+}
+
+.about-text {
+    color: #ddd;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+/* =========================
+   BASKETBALL
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
+
+    gap: 20px;
+
+    margin-top: 45px;
+}
+
+.card {
+    background: var(--card);
+
+    border: 1px solid #292929;
+
+    border-radius: 22px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 25px rgba(255,20,147,.18);
+}
+
+.card-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--pink);
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.card p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* =========================
+   JOURNEY
+========================= */
+
+.journey-box {
+    margin-top: 40px;
+
+    padding: 40px 30px;
+
+    background: #101010;
+
+    border-left: 5px solid var(--pink);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 25px rgba(255,20,147,.08);
+}
+
+.journey-box p {
+    color: #ddd;
+
+    text-align: center;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+
+    font-size: 17px;
+}
+
+.faith {
+    color: var(--pink) !important;
+    font-size: 24px !important;
+    font-weight: bold;
+}
+
+/* =========================
+   MERCH
+========================= */
+
+.merch-section {
+    max-width: 1200px;
+}
+
+.merch-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 22px;
+
+    margin-top: 45px;
+}
+
+.merch-card {
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #090909
+        );
+
+    border: 1px solid #292929;
+
+    border-radius: 25px;
+
+    padding: 30px 18px;
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.merch-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 30px rgba(255,20,147,.2);
+}
+
+.merch-image {
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #333;
+}
+
+.merch-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
+}
+
+.merch-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.merch-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.order-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 10px 22px;
+
+    background: var(--pink);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+.order-button:hover {
+    background: white;
+    color: var(--pink);
+}
+
+/* =========================
+   ORDER BOX
+========================= */
+
+.order-box {
+    margin-top: 50px;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1493,
+            #8b004d
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,20,147,.2);
+}
+
+.order-box h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.order-box p {
+    max-width: 650px;
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+.white-button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 28px;
+
+    background: white;
+
+    color: var(--pink);
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.white-button:hover {
+    transform: scale(1.05);
+
+    background: #000;
+
+    color: white;
+}
+
+/* =========================
+   INSTAGRAM
+========================= */
+
+.instagram {
+    max-width: none;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #18000e,
+            #070707 70%
+        );
+
+    border-top: 1px solid var(--pink);
+    border-bottom: 1px solid var(--pink);
+}
+
+.instagram p {
+    max-width: 650px;
+    margin: auto;
+    color: #bbb;
+    line-height: 1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: #000;
+
+    color: #888;
+
+    border-top: 1px solid #222;
+}
+
+footer strong {
+    color: var(--pink);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
 
     header {
-      text-align: center;
-      padding: 25px 15px;
-      border-bottom: 2px solid #ff1493;
-      background: #000;
+        padding: 15px;
     }
 
-    /* YOUR LOGO */
     .logo {
-      width: 280px;
-      max-width: 90%;
-      border-radius: 20px;
+        width: 250px;
     }
-
-    nav {
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #ff1493;
-    }
-
-    /* HERO */
 
     .hero {
-      min-height: 500px;
-      padding: 50px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+        min-height: 600px;
 
-      background:
-        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.95)),
-        url("image1.jpeg");
-
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero h1 {
-      font-size: 55px;
-      color: #ff1493;
-      margin: 10px;
-      text-transform: uppercase;
+        background-attachment: scroll;
     }
 
     .hero p {
-      max-width: 650px;
-      font-size: 19px;
-      line-height: 1.7;
-    }
-
-    /* INSTAGRAM BUTTON */
-
-    .pink-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #ff1493;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 17px;
-      font-weight: bold;
-      box-shadow: 0 0 15px #ff1493;
-      transition: .3s;
-    }
-
-    .pink-button:hover {
-      background: white;
-      color: #ff1493;
+        font-size: 16px;
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+        padding: 65px 18px;
     }
 
-    h2 {
-      text-align: center;
-      color: #ff1493;
-      font-size: 35px;
-      margin-bottom: 25px;
+    .about-grid {
+        grid-template-columns: 1fr;
     }
 
-    section p {
-      text-align: center;
-      line-height: 1.8;
-      font-size: 17px;
+    .about-image {
+        max-width: 350px;
     }
 
-    /* BASKETBALL */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+    .mission-box {
+        padding: 30px 20px;
     }
 
-    .card {
-      background: #111;
-      border: 1px solid #ff1493;
-      border-radius: 18px;
-      padding: 25px;
-      text-align: center;
+    .order-box {
+        padding: 40px 20px;
     }
 
-    .card h3 {
-      color: #ff1493;
-    }
+}
 
-    .card p {
-      font-size: 15px;
-    }
-
-    /* JOURNEY */
-
-    .journey {
-      background: #111;
-      border-left: 5px solid #ff1493;
-      border-radius: 15px;
-      padding: 30px;
-    }
-
-    /* INSTAGRAM SECTION */
-
-    #instagram {
-      text-align: center;
-      border-top: 1px solid #ff1493;
-      border-bottom: 1px solid #ff1493;
-      max-width: none;
-      background: #0b0b0b;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #000;
-      color: #aaa;
-    }
-
-    footer span {
-      color: #ff1493;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 6px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 
 <body>
 
-  <!-- HEADER -->
 
-  <header>
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
 
     <img
-      src="image1.jpeg"
-      alt="Her Journey Basketball Logo"
-      class="logo"
+        src="IMG_4900.jpeg"
+        alt="Her Journey Logo"
+        class="logo"
     >
 
     <nav>
-      <a href="#about">About</a>
-      <a href="#basketball">Basketball</a>
-      <a href="#journey">My Journey</a>
-      <a href="#instagram">Instagram</a>
+
+        <a href="#about">ABOUT</a>
+
+        <a href="#mission">MISSION</a>
+
+        <a href="#basketball">BASKETBALL</a>
+
+        <a href="#journey">JOURNEY</a>
+
+        <a href="#merch">MERCH</a>
+
+        <a href="#instagram">INSTAGRAM</a>
+
     </nav>
 
-  </header>
+</header>
 
 
-  <!-- HERO -->
 
-  <div class="hero">
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+    <img
+        src="741CF963-6F59-427E-8B5C-F0BE489B11CE(1).jpeg"
+        alt="Her Journey Basketball Logo"
+        class="hero-badge"
+    >
 
     <h1>HER JOURNEY</h1>
 
-    <p>
-      A basketball journey built on hard work, confidence,
-      faith, dedication, and believing in yourself.
-    </p>
+    <h2>Basketball • Confidence • Growth</h2>
 
-    <!-- PINK BUTTON → INSTAGRAM -->
+    <p>
+        A basketball journey built on hard work,
+        confidence, dedication, teamwork, and
+        believing in yourself.
+    </p>
 
     <a
-      href="https://www.instagram.com/cami__hoops/"
-      target="_blank"
-      class="pink-button"
+        href="https://www.instagram.com/cami__hoops/"
+        target="_blank"
+        class="pink-button"
     >
-      FOLLOW MY JOURNEY 🏀💗
+        FOLLOW MY JOURNEY 🏀💗
     </a>
 
-  </div>
+</div>
 
 
-  <!-- ABOUT -->
 
-  <section id="about">
+<!-- =========================
+     ABOUT
+========================= -->
 
-    <h2>ABOUT HER JOURNEY</h2>
+<section id="about">
 
-    <p>
-      Her Journey is about the work behind the game.
-      Basketball isn't just about scoring points.
-      It's about discipline, confidence, teamwork,
-      learning, and continuing to grow.
+    <h2 class="section-title">
+        ABOUT <span>HER JOURNEY</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Her Journey is more than basketball.
+        It's about becoming stronger, believing
+        in yourself, and continuing to grow.
     </p>
 
-    <p>
-      Every practice, every game, every challenge,
-      and every accomplishment becomes part of the journey.
+
+    <div class="about-grid">
+
+        <img
+            src="741CF963-6F59-427E-8B5C-F0BE489B11CE(1).jpeg"
+            alt="Her Journey HJ Logo"
+            class="about-image"
+        >
+
+        <div class="about-text">
+
+            <p>
+                Her Journey is about the work behind
+                the game. Basketball isn't only about
+                scoring points.
+            </p>
+
+            <br>
+
+            <p>
+                It's about discipline, confidence,
+                teamwork, learning from mistakes,
+                and continuing to improve.
+            </p>
+
+            <br>
+
+            <p>
+                Every practice, every game, every
+                challenge, and every accomplishment
+                becomes part of the journey.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MISSION
+========================= -->
+
+<section id="mission">
+
+    <h2 class="section-title">
+        OUR <span>MISSION</span>
+    </h2>
+
+    <div class="mission-box">
+
+        <h3>More Than Basketball 🏀</h3>
+
+        <p>
+            Her Journey exists to encourage girls to
+            work hard, believe in themselves, build
+            confidence, support one another, and
+            chase their goals both on and off the court.
+        </p>
+
+        <br>
+
+        <p>
+            Basketball is part of the journey —
+            but the person you become along the way
+            is what matters most.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     BASKETBALL
+========================= -->
+
+<section id="basketball">
+
+    <h2 class="section-title">
+        🏀 <span>BASKETBALL</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Every practice is another opportunity to grow.
+        Every game is another opportunity to learn.
     </p>
 
-  </section>
-
-
-  <!-- BASKETBALL -->
-
-  <section id="basketball">
-
-    <h2>🏀 BASKETBALL</h2>
 
     <div class="cards">
 
-      <div class="card">
-        <h3>WORK HARD</h3>
-        <p>
-          Keep putting in the work and use every practice
-          as an opportunity to improve.
-        </p>
-      </div>
 
-      <div class="card">
-        <h3>STAY FOCUSED</h3>
-        <p>
-          Keep your goals in front of you and stay focused
-          on becoming a better player.
-        </p>
-      </div>
+        <div class="card">
 
-      <div class="card">
-        <h3>CONFIDENCE</h3>
-        <p>
-          Believe in the work you have put in and keep
-          learning from every experience.
-        </p>
-      </div>
+            <div class="card-icon">🔥</div>
 
-      <div class="card">
-        <h3>TEAMWORK</h3>
-        <p>
-          Encourage your teammates, communicate,
-          and play together.
-        </p>
-      </div>
+            <h3>WORK HARD</h3>
+
+            <p>
+                Keep putting in the work and use every
+                practice as an opportunity to improve.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🎯</div>
+
+            <h3>STAY FOCUSED</h3>
+
+            <p>
+                Keep your goals in front of you and
+                stay focused on becoming a better player.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">💗</div>
+
+            <h3>CONFIDENCE</h3>
+
+            <p>
+                Believe in yourself and trust the work
+                you have put in.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🤝</div>
+
+            <h3>TEAMWORK</h3>
+
+            <p>
+                Encourage your teammates, communicate,
+                and play together.
+            </p>
+
+        </div>
+
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- JOURNEY -->
 
-  <section id="journey">
+<!-- =========================
+     JOURNEY
+========================= -->
 
-    <h2>MY JOURNEY</h2>
+<section id="journey">
 
-    <div class="journey">
+    <h2 class="section-title">
+        MY <span>JOURNEY</span>
+    </h2>
 
-      <p>
-        My basketball journey is still being written.
-        Every practice gives me another chance to improve,
-        and every game gives me something new to learn.
-      </p>
 
-      <p>
-        I don't have to be perfect.
-        I just have to keep working, keep learning,
-        and keep moving forward.
-      </p>
+    <div class="journey-box">
 
-      <p>
-        <strong>Faith Over Fear. 🏀💗</strong>
-      </p>
+        <p>
+            My basketball journey is still being written.
+            Every practice gives me another chance to
+            improve, and every game gives me something
+            new to learn.
+        </p>
+
+        <p>
+            I don't have to be perfect.
+            I just have to keep working,
+            keep learning, and keep moving forward.
+        </p>
+
+        <p class="faith">
+            Faith Over Fear. 🏀💗
+        </p>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- INSTAGRAM -->
 
-  <section id="instagram">
+<!-- =========================
+     MERCH
+========================= -->
 
-    <h2>FOLLOW THE JOURNEY 📸</h2>
+<section id="merch" class="merch-section">
+
+    <h2 class="section-title">
+        HER JOURNEY <span>MERCH</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Represent Her Journey on the court,
+        at school, or wherever your journey takes you.
+    </p>
+
+
+    <div class="merch-grid">
+
+
+        <!-- SHIRTS -->
+
+        <div class="merch-card">
+
+            <div class="merch-icon">👕</div>
+
+            <h3>Mercedes Shirts</h3>
+
+            <p>
+                Her Journey shirts made to represent
+                the movement and the journey.
+            </p>
+
+            <a href="#order" class="order-button">
+                ORDER
+            </a>
+
+        </div>
+
+
+        <!-- HEADBANDS -->
+
+        <div class="merch-card">
+
+            <div class="merch-icon">🎀</div>
+
+            <h3>Headbands</h3>
+
+            <p>
+                Game-day and everyday Her Journey
+                headbands.
+            </p>
+
+            <a href="#order" class="order-button">
+                ORDER
+            </a>
+
+        </div>
+
+
+        <!-- SOCKS -->
+
+        <div class="merch-card">
+
+            <div class="merch-icon">🧦</div>
+
+            <h3>Socks</h3>
+
+            <p>
+                Complete your basketball fit
+                with Her Journey socks.
+            </p>
+
+            <a href="#order" class="order-button">
+                ORDER
+            </a>
+
+        </div>
+
+
+        <!-- BACKPACKS -->
+
+        <div class="merch-card">
+
+            <div class="merch-icon">🎒</div>
+
+            <h3>Backpacks</h3>
+
+            <p>
+                Carry your basketball gear,
+                school supplies, and your journey.
+            </p>
+
+            <a href="#order" class="order-button">
+                ORDER
+            </a>
+
+        </div>
+
+
+        <!-- KEYCHAINS -->
+
+        <div class="merch-card">
+
+            <div class="merch-icon">🔑</div>
+
+            <h3>Keychains</h3>
+
+            <p>
+                A small way to keep Her Journey
+                with you everywhere.
+            </p>
+
+            <a href="#order" class="order-button">
+                ORDER
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ORDER -->
+
+    <div class="order-box" id="order">
+
+        <h2>READY TO ORDER? 💗</h2>
+
+        <p>
+            Want a Her Journey shirt, headband,
+            socks, backpack, or keychain?
+            Contact us to ask about available
+            merch and orders.
+        </p>
+
+        <!-- CHANGE THIS TO YOUR REAL ORDER LINK LATER -->
+
+        <a
+            href="https://www.instagram.com/cami__hoops/"
+            target="_blank"
+            class="white-button"
+        >
+            ORDER HER JOURNEY MERCH
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INSTAGRAM
+========================= -->
+
+<section id="instagram" class="instagram">
+
+    <h2 class="section-title">
+        FOLLOW <span>THE JOURNEY</span> 📸
+    </h2>
 
     <p>
-      Follow me on Instagram for basketball,
-      games, memories, and more.
+        Follow along for basketball, games,
+        memories, updates, and more.
     </p>
 
     <a
-      href="https://www.instagram.com/cami__hoops/"
-      target="_blank"
-      class="pink-button"
+        href="https://www.instagram.com/cami__hoops/"
+        target="_blank"
+        class="pink-button"
     >
-      @cami__hoops
+        @CAMI__HOOPS
     </a>
 
-  </section>
+</section>
 
 
-  <!-- FOOTER -->
 
-  <footer>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
 
     <p>
-      © 2026 <span>Her Journey</span> 🏀💗
+        © 2026 <strong>Her Journey</strong> 🏀💗
     </p>
 
-    <p>Faith Over Fear.</p>
+    <br>
 
-  </footer>
+    <p>
+        Faith Over Fear.
+    </p>
+
+</footer>
+
 
 </body>
 </html>
